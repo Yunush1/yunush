@@ -112,7 +112,7 @@ router.post('/login', async(req,res,next)=>{
                 message : 'User Loged In',
                 token : token,
                 user : user
-            })
+        })
         })
 
     } catch (error) {
