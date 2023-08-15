@@ -24,6 +24,9 @@ connectDb();
 // Our server running on this 
 http://localhost:3000/api/data/auth/register
 app.use('/api/data/auth',require('./routes/user'));
+app.use('/api/data/', require('./routes/post')); 
+//delete post
+//app.use('/api/data/delete',require('./routes/post'));
 
 
 

@@ -108,7 +108,7 @@ router.post('/login', async(req,res,next)=>{
         },(err, token)=>{
             if(err) throw err;
             res.status(200).json({
-                success : true,
+                success : "true",
                 message : 'User Loged In',
                 token : token,
                 user : user
