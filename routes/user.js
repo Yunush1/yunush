@@ -72,7 +72,7 @@ router.post('/register',async (req,res,next) =>{
         console.log(error)
    }
 })
-
+//login data
 router.post('/login', async(req,res,next)=>{
     const email = req.body.email;
     const password = req.body.password;
@@ -121,6 +121,27 @@ router.post('/login', async(req,res,next)=>{
             success : false,
             message : 'Server error'
         })
+    }
+})
+
+//search users
+router.get('/query',async (req,res,next) => {
+    try {
+        const user = await User.find({username : req.body.username}) 
+        if(!user){
+            res.status(400).json({
+                success : false,
+                message : 'oops! Try again'
+            })
+        }
+        res.status(200).json({
+            success : true,
+            message : 'find successfully',
+            user : user
+        })
+
+    } catch (error) {
+        
     }
 })
 
